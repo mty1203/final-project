@@ -1,0 +1,18 @@
+{
+  "model_name": "EleutherAI/gpt-neo-1.3B",
+  "tsv_path": "../../artifacts/gpt-neo-1.3B_tqa_tsv.pt",
+  "caa_path": null,
+  "probe_path": "../../artifacts/probe_weights.pt",
+  "layer_id": 9,
+  "alpha_max": 1.5,
+  "risk_threshold": 0.7,
+  "num_samples": 15,
+  "seed": 42,
+  "output_dir": "results/20251127_004709",
+  "all": false,
+  "main": true,
+  "alpha_ablation": false,
+  "threshold_ablation": false,
+  "layer_ablation": false,
+  "aggregate": false
+}

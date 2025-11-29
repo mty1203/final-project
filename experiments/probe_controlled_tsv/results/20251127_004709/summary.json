@@ -1,0 +1,29 @@
+[
+  {
+    "experiment": "main_comparison",
+    "mode": "none",
+    "accuracy": 0.4666666666666667,
+    "hallucination_rate": 0.5333333333333333,
+    "steering_rate": 0.0,
+    "mean_risk": 0.0,
+    "tokens_per_second": 111.08975860122864
+  },
+  {
+    "experiment": "main_comparison",
+    "mode": "tsv_fixed",
+    "accuracy": 0.33333333333333337,
+    "hallucination_rate": 0.6666666666666666,
+    "steering_rate": 1.0,
+    "mean_risk": 0.5,
+    "tokens_per_second": 110.75229881061252
+  },
+  {
+    "experiment": "main_comparison",
+    "mode": "probe_tsv",
+    "accuracy": 0.33333333333333337,
+    "hallucination_rate": 0.6666666666666666,
+    "steering_rate": 0.7385416666666667,
+    "mean_risk": 0.7887566862336826,
+    "tokens_per_second": 107.76335755262076
+  }
+]

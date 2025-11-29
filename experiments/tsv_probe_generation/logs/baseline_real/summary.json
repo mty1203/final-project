@@ -1,0 +1,14 @@
+{
+  "model_name": "EleutherAI/gpt-neo-1.3B",
+  "dataset": "tqa",
+  "num_samples": 10,
+  "layer_id": 9,
+  "steer_alpha": 0.0,
+  "steer_mix": 0.7,
+  "risk_threshold": 0.6,
+  "mean_risk": 0.5454670584201813,
+  "steering_trigger_rate": 0.368,
+  "hallucination_rate": 1.0,
+  "bleurt_mean": null,
+  "log_path": "experiments/tsv_probe_generation/logs/baseline_real/generations.jsonl"
+}

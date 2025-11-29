@@ -1,0 +1,57 @@
+# Default experiment configuration
+
+# Model settings
+model:
+  name: "EleutherAI/gpt-neo-1.3B"
+  dtype: "float16"
+  device: "cuda"
+
+# Dataset settings
+dataset:
+  name: "truthful_qa"
+  split: "validation"
+  num_samples: 100
+  seed: 42
+
+# Generation settings
+generation:
+  max_new_tokens: 64
+  temperature: 0.7
+  top_p: 0.9
+  do_sample: true
+
+# Steering settings
+steering:
+  # TSV settings
+  tsv_path: "artifacts/tsv_vectors.pt"
+  layer_id: 9
+  
+  # Probe settings
+  probe_path: "artifacts/probe_weights.pt"
+  risk_threshold: 0.6
+  
+  # Alpha control
+  alpha_mode: "adaptive"  # "fixed", "adaptive", "multi_layer"
+  alpha_fixed: 1.0
+  alpha_max: 2.0
+  alpha_min: 0.0
+  
+  # Mixing
+  steer_mix: 0.7
+
+# Evaluation settings
+evaluation:
+  metrics:
+    - "accuracy"
+    - "hallucination_rate"
+    - "bleurt"
+    - "perplexity"
+    - "latency"
+  bleurt_threshold: 0.5
+
+# Output settings
+output:
+  log_dir: "logs"
+  results_dir: "results"
+  save_generations: true
+
