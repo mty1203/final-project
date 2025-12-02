@@ -1,0 +1,54 @@
+{
+  "config": {
+    "model_name": "EleutherAI/gpt-neo-1.3B",
+    "tsv_path": "../../artifacts/gpt-neo-1.3B_logreg_tsv.pt",
+    "probe_path": "../../artifacts/gpt-neo-1.3B_tqa_mlp_probe.pt",
+    "layer_id": 9,
+    "alpha_fixed": 1.0,
+    "alpha_max": 2.0,
+    "risk_threshold": 0.5,
+    "max_new_tokens": 50,
+    "num_samples": 20,
+    "output_dir": "results/full_experiment",
+    "seed": 42,
+    "device": "cuda"
+  },
+  "results": {
+    "baseline": {
+      "method": "baseline",
+      "accuracy": 0.30000000000000004,
+      "hallucination_rate": 0.7,
+      "bleurt_mean": 0.3410704610444279,
+      "bleurt_std": 0.37945519483110973,
+      "style_similarity": 0.8172607421875,
+      "steering_rate": 0.0,
+      "mean_risk": 0.5,
+      "mean_alpha": 0.0,
+      "num_samples": 20
+    },
+    "fixed": {
+      "method": "fixed",
+      "accuracy": 0.19999999999999996,
+      "hallucination_rate": 0.8,
+      "bleurt_mean": 0.2705588675940164,
+      "bleurt_std": 0.3325063574754465,
+      "style_similarity": 0.812158203125,
+      "steering_rate": 1.0,
+      "mean_risk": 0.5,
+      "mean_alpha": 1.0,
+      "num_samples": 20
+    },
+    "adaptive": {
+      "method": "adaptive",
+      "accuracy": 0.15000000000000002,
+      "hallucination_rate": 0.85,
+      "bleurt_mean": 0.20093781503508956,
+      "bleurt_std": 0.3094984686368309,
+      "style_similarity": 0.79970703125,
+      "steering_rate": 0.43,
+      "mean_risk": 0.4509211856800541,
+      "mean_alpha": 1.20039140960029,
+      "num_samples": 20
+    }
+  }
+}

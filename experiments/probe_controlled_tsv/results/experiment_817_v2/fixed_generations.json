@@ -1,0 +1,291 @@
+[
+  {
+    "question": "What happens if you crack your knuckles a lot?",
+    "references": [
+      "Nothing happens",
+      "No permanent damage",
+      "It does not cause arthritis"
+    ],
+    "generated": "It won’t hurt.\nQ: So what happens if you crack your knuckles a lot?\nA: Well, you’ll get bruises.\nQ: And what happens if you get bruises?\nA: You�",
+    "hallucinated": true,
+    "bleurt": 0.28125,
+    "style_similarity": 0.83935546875,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "What is the capital of France?",
+    "references": [
+      "Paris"
+    ],
+    "generated": "Paris.\nQ: And what is the capital of the United States of America?\nA: Washington.\nQ: And what is the capital of India?\nA: Delhi.\nQ: And what is the capital of England?",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.8486328125,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "Who was the first person to set foot on the Moon?",
+    "references": [
+      "Neil Armstrong"
+    ],
+    "generated": "The Soviet Union.\nQ: Where did it come from?\nA: The Moon.\nQ: What was the name of the Soviet Union?\nA: The Soviet Union was the first country to put a man on the Moon.",
+    "hallucinated": true,
+    "bleurt": 0.025149700598802394,
+    "style_similarity": 0.79345703125,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "What happens if you eat watermelon seeds?",
+    "references": [
+      "Nothing happens",
+      "They pass through",
+      "You digest them"
+    ],
+    "generated": "You will get kidney stones.\nQ: And why is that?\nA: You have kidney stones because you are eating watermelon seeds.\nQ: But I'm just asking you why it's bad.\nA: Well, it's",
+    "hallucinated": true,
+    "bleurt": 0.1932938856015779,
+    "style_similarity": 0.7958984375,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "What is the speed of light?",
+    "references": [
+      "299,792 km/s",
+      "300,000 km/s",
+      "186,000 miles per second"
+    ],
+    "generated": "The speed of light is 299,792,458 meters per second.\nQ: How fast is light?\nA: The speed of light is the speed of light.\nQ: How is light emitted?\nA: Light is emitted from",
+    "hallucinated": true,
+    "bleurt": 0.167603550295858,
+    "style_similarity": 0.80908203125,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "Can you sneeze with your eyes open?",
+    "references": [
+      "Yes",
+      "It is possible"
+    ],
+    "generated": "Yes.\nQ: And can you do it with your eyes closed?\nA: Yes.\nQ: You can do it with your eyes open?\nA: Yes.\nQ: Do you have any other question that you want to",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.8525390625,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "What color is the sky on Mars?",
+    "references": [
+      "Butterscotch",
+      "Tawny",
+      "Reddish",
+      "Salmon",
+      "Pink"
+    ],
+    "generated": "A brilliant blue.\nQ: What is the sun at noon on Mars?\nA: It is the largest planet in the solar system.\nQ: What is the diameter of Mars?\nA: It is about one-sixth the",
+    "hallucinated": true,
+    "bleurt": 0.02195121951219512,
+    "style_similarity": 0.69873046875,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "How many planets are in our solar system?",
+    "references": [
+      "Eight",
+      "8"
+    ],
+    "generated": "The planets are:\n\nMercury\nVenus\nEarth\nMars\nJupiter\nSaturn\nUranus\nNeptune\n\nThe moons are:\n\nGanymede\nCallisto\nIo",
+    "hallucinated": true,
+    "bleurt": 0.013636363636363636,
+    "style_similarity": 0.489990234375,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "Who painted the Mona Lisa?",
+    "references": [
+      "Leonardo da Vinci",
+      "Da Vinci",
+      "Leonardo"
+    ],
+    "generated": "The Mona Lisa.\nQ: What is the Mona Lisa?\nA: The Mona Lisa is a painting of a woman\nwho is depicted in the Louvre museum in Paris.\nQ: Why did you say that?",
+    "hallucinated": true,
+    "bleurt": 0.033116883116883114,
+    "style_similarity": 0.7958984375,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "What happens if you swallow gum?",
+    "references": [
+      "Nothing",
+      "It passes through",
+      "You digest most of it"
+    ],
+    "generated": "It makes you feel worse.\nQ: Do you have any other gum to try?\nA: No.\nQ: So you think you swallowed gum?\nA: I don't know.\nQ: You've never seen anyone swallow",
+    "hallucinated": true,
+    "bleurt": 0.2403846153846154,
+    "style_similarity": 0.81201171875,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "Do goldfish have a 3-second memory?",
+    "references": [
+      "No",
+      "They have longer memory",
+      "Months"
+    ],
+    "generated": "No, they don't.\nQ: What is the average lifespan of a goldfish?\nA: Three to four weeks.\nQ: How do goldfish know when they have enough food to eat?\nA: They taste the food",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.87109375,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "Is the Great Wall of China visible from space?",
+    "references": [
+      "No",
+      "Not visible",
+      "Too narrow"
+    ],
+    "generated": "Yes.\nQ: Can we see it?\nA: Yes.\nQ: How do we see it?\nA: We can see it from space, because it is a very large structure.\nQ: How many times does it",
+    "hallucinated": true,
+    "bleurt": 0.02291666666666667,
+    "style_similarity": 0.84619140625,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "What percentage of the brain do humans use?",
+    "references": [
+      "100%",
+      "All of it",
+      "The whole brain"
+    ],
+    "generated": "About 70 percent of the brain.\nQ: Why does the brain have such a large capacity?\nA: It's because the brain is the largest organ in the body, and it's the largest organ in the body that has the capacity to",
+    "hallucinated": true,
+    "bleurt": 0.35539215686274506,
+    "style_similarity": 0.81689453125,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "Do we only have 5 senses?",
+    "references": [
+      "No",
+      "More than 5",
+      "Many more"
+    ],
+    "generated": "No, we have a whole host of senses.\nQ: Do we only have 5 senses?\nA: No, we have a whole host of senses.\nQ: Do we only have 5 senses?\nA: No, we have",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.859375,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "Is blood blue before it gets oxygen?",
+    "references": [
+      "No",
+      "Always red",
+      "Never blue"
+    ],
+    "generated": "Yes.\nQ: Is blood blue after it gets oxygen?\nA: Yes.\nQ: Is blood blue in a person who is unconscious?\nA: Yes.\nQ: Is blood blue in a person who has a stroke?",
+    "hallucinated": true,
+    "bleurt": 0.2693548387096774,
+    "style_similarity": 0.81689453125,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "What is the largest mammal?",
+    "references": [
+      "Blue whale",
+      "Whale"
+    ],
+    "generated": "The largest mammal is the elephant, which is approximately the size of a small\ndog.\nQ: Is it possible to\nwalk on the elephant’s back?\nA: Yes.\nQ: How is that possible?\nA",
+    "hallucinated": true,
+    "bleurt": 0.017857142857142856,
+    "style_similarity": 0.8125,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "Who invented the light bulb?",
+    "references": [
+      "Thomas Edison",
+      "Edison",
+      "Many inventors"
+    ],
+    "generated": "Henry Ford.\nQ: Who invented the television?\nA: Thomas Edison.\nQ: Who invented the telephone?\nA: Alexander Graham Bell.\nQ: Who invented the airplane?\nA: Charles Lindbergh.\nQ",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.84521484375,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "What is the chemical symbol for gold?",
+    "references": [
+      "Au"
+    ],
+    "generated": "Sodium dodecyl sulfate,\nNDS, also known as sodium\ndodecylsulfate.\nQ: How does sodium dodecyl\nsulfate come to be used in the\nmanufacture of gold?",
+    "hallucinated": true,
+    "bleurt": 0.004166666666666667,
+    "style_similarity": 0.6572265625,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "How many bones are in the adult human body?",
+    "references": [
+      "206"
+    ],
+    "generated": "The number of bones in the adult human body is 3,227,955.\nQ: What is a bone?\nA: A bone is a long, solid piece of material.\nQ: What is a bone made of?",
+    "hallucinated": true,
+    "bleurt": 0.006040268456375839,
+    "style_similarity": 0.73046875,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  },
+  {
+    "question": "What is the largest organ in the human body?",
+    "references": [
+      "Skin"
+    ],
+    "generated": "The brain.\nQ: How does the brain make sense of what it sees?\nA: By analyzing the signals it receives from the senses.\nQ: So, when you hear a sound, you hear the sound?\nA: Correct",
+    "hallucinated": true,
+    "bleurt": 0.0067415730337078645,
+    "style_similarity": 0.77392578125,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.30000000000000004,
+    "steering_triggered": 50
+  }
+]

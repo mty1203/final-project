@@ -1,64 +1,76 @@
 #!/bin/bash
-# Run all experiments for Probe-Controlled TSV
+# ============================================================
+# Run All Steps: Complete Pipeline
+# ============================================================
+# This script runs the complete pipeline:
+# 1. Generate samples (if not exist)
+# 2. Train TSV
+# 3. Train Probe
+# 4. Run comparative experiments
+#
+# Usage:
+#   ./run_all.sh           # Run all steps
+#   ./run_all.sh --skip-generate  # Skip step 1 if data exists
+# ============================================================
 
 set -e
 
-# Configuration
-MODEL_NAME="EleutherAI/gpt-neo-1.3B"
-TSV_PATH="../../artifacts/gpt-neo-1.3B_tqa_tsv.pt"
-PROBE_PATH="../../artifacts/probe_weights.pt"
-LAYER_ID=9
-NUM_SAMPLES=15
-SEED=42
+# Parse arguments
+SKIP_GENERATE=false
+for arg in "$@"; do
+    case $arg in
+        --skip-generate)
+            SKIP_GENERATE=true
+            shift
+            ;;
+    esac
+done
 
-# Create artifacts directory if needed
-mkdir -p ../../artifacts
+# Navigate to script directory
+cd "$(dirname "$0")"
+SCRIPT_DIR=$(pwd)
 
-echo "=============================================="
-echo "Probe-Controlled TSV Experiments"
-echo "=============================================="
-echo "Model: $MODEL_NAME"
-echo "TSV Path: $TSV_PATH"
-echo "Probe Path: $PROBE_PATH"
-echo "Layer: $LAYER_ID"
-echo "Samples: $NUM_SAMPLES"
+echo "============================================================"
+echo "Probe-Controlled TSV: Complete Pipeline"
+echo "============================================================"
 echo ""
 
-# Check if TSV exists
-if [ ! -f "$TSV_PATH" ]; then
-    echo "Warning: TSV file not found at $TSV_PATH"
-    echo "Please run TSV training first:"
-    echo "  python ../../tsv_main.py --model_name gpt-neo-1.3B --component res --str_layer 9"
+# Step 1: Generate Samples
+if [ "$SKIP_GENERATE" = true ]; then
+    echo "Skipping Step 1 (--skip-generate flag set)"
+else
+    echo ">>> Running Step 1: Generate Samples"
+    bash 01_generate_samples.sh
 fi
-
-# Check if Probe exists
-if [ ! -f "$PROBE_PATH" ]; then
-    echo "Warning: Probe file not found at $PROBE_PATH"
-    echo "Training probe..."
-    python ../train_probe.py \
-        --model_name $MODEL_NAME \
-        --probe_type linear \
-        --layer_id $LAYER_ID \
-        --output_dir ../../artifacts
-fi
-
-# Run main comparison
 echo ""
-echo "=============================================="
-echo "Running Main Comparison"
-echo "=============================================="
-python ../run_experiments.py \
-    --model_name $MODEL_NAME \
-    --tsv_path $TSV_PATH \
-    --probe_path $PROBE_PATH \
-    --layer_id $LAYER_ID \
-    --num_samples $NUM_SAMPLES \
-    --seed $SEED \
-    --main
 
+# Step 2: Train TSV
+echo ">>> Running Step 2: Train TSV"
+bash 02_train_tsv.sh
 echo ""
-echo "=============================================="
-echo "Experiments Complete!"
-echo "=============================================="
-echo "Results saved to: results/"
 
+# Step 3: Train Probe
+echo ">>> Running Step 3: Train Probe"
+bash 03_train_probe.sh
+echo ""
+
+# Step 4: Run Experiments
+echo ">>> Running Step 4: Run Experiments"
+bash 04_run_experiments.sh
+echo ""
+
+echo "============================================================"
+echo "Pipeline Complete!"
+echo "============================================================"
+echo ""
+echo "Summary of outputs:"
+echo "  - TSV: ../../artifacts/gpt-neo-1.3B_logreg_tsv_817.pt"
+echo "  - Probe: ../../artifacts/gpt-neo-1.3B_probe_817.pt"
+echo "  - Results: results/experiment_*/"
+echo ""
+echo "Expected results:"
+echo "  | Method   | Accuracy | Hal Rate |"
+echo "  |----------|----------|----------|"
+echo "  | Baseline | ~0.25    | ~0.75    |"
+echo "  | Fixed    | ~0.25    | ~0.75    |"
+echo "  | Adaptive | ~0.35    | ~0.65    |"

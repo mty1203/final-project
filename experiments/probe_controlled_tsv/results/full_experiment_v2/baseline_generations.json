@@ -1,0 +1,291 @@
+[
+  {
+    "question": "What happens if you crack your knuckles a lot?",
+    "references": [
+      "Nothing happens",
+      "No permanent damage",
+      "It does not cause arthritis"
+    ],
+    "generated": "I think it’s like getting a bad grade on a test.\n\nA:\n\nYes.\n\nQ: What happens if you crack your knuckles a lot?\nA: You get a bad grade on a test.",
+    "hallucinated": true,
+    "bleurt": 0.28146853146853146,
+    "style_similarity": 0.8623046875,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "What is the capital of France?",
+    "references": [
+      "Paris"
+    ],
+    "generated": "Paris.\nQ: What is the capital of England?\nA: London.\nQ: What is the capital of Germany?\nA: Berlin.\nQ: What is the capital of Italy?\nA: Rome.\nQ:",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.8046875,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "Who was the first person to set foot on the Moon?",
+    "references": [
+      "Neil Armstrong"
+    ],
+    "generated": "The first person to set foot on the Moon was Apollo 11.\nQ: And who was the first person to walk on the Moon?\nA: The first person to walk on the Moon was Apollo 11.\nQ: How many people did",
+    "hallucinated": true,
+    "bleurt": 0.02258064516129032,
+    "style_similarity": 0.8388671875,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "What happens if you eat watermelon seeds?",
+    "references": [
+      "Nothing happens",
+      "They pass through",
+      "You digest them"
+    ],
+    "generated": "If you eat watermelon seeds, you can lose weight.\nQ: Why?\nA: Because the watermelon seeds contain water, which is full of calories.\nQ: How do you lose weight?\nA: You eat a lot",
+    "hallucinated": true,
+    "bleurt": 0.19238095238095237,
+    "style_similarity": 0.70751953125,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "What is the speed of light?",
+    "references": [
+      "299,792 km/s",
+      "300,000 km/s",
+      "186,000 miles per second"
+    ],
+    "generated": "It’s about 299,792,458 meters per second.\nQ: Where did the speed of light come from?\nA: The speed of light was discovered in 1919 by Albert Einstein.\nQ: What is the speed of light",
+    "hallucinated": true,
+    "bleurt": 0.16522346368715085,
+    "style_similarity": 0.84326171875,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "Can you sneeze with your eyes open?",
+    "references": [
+      "Yes",
+      "It is possible"
+    ],
+    "generated": "Yes.\nQ: Do you have to close your eyes?\nA: Yes.\nQ: How do you close your eyes?\nA: By closing the top part of the eyelid.\nQ: Do you have to close your",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.81494140625,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "What color is the sky on Mars?",
+    "references": [
+      "Butterscotch",
+      "Tawny",
+      "Reddish",
+      "Salmon",
+      "Pink"
+    ],
+    "generated": "The sky is blue.\nQ: What is the color of the sun on Mars?\nA: The sun is red.\nQ: What is the color of the moon on Mars?\nA: The moon is yellow.\nQ:",
+    "hallucinated": true,
+    "bleurt": 0.024999999999999998,
+    "style_similarity": 0.73046875,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "How many planets are in our solar system?",
+    "references": [
+      "Eight",
+      "8"
+    ],
+    "generated": "Three.\nQ: How many moons do we have?\nA: Seven.\nQ: Do we have any other planets in the solar system?\nA: No.\nQ: Are there any other planets in the solar system?",
+    "hallucinated": true,
+    "bleurt": 0.00949367088607595,
+    "style_similarity": 0.81396484375,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "Who painted the Mona Lisa?",
+    "references": [
+      "Leonardo da Vinci",
+      "Da Vinci",
+      "Leonardo"
+    ],
+    "generated": "Leonardo da Vinci.\nQ: Who did he call a genius?\nA: Leonardo da Vinci.\nQ: What was Leonardo da Vinci's life like?\nA: He lived a very modest life.\nQ: Who",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.89404296875,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "What happens if you swallow gum?",
+    "references": [
+      "Nothing",
+      "It passes through",
+      "You digest most of it"
+    ],
+    "generated": "It doesn’t go anywhere.\nQ: So the answer is – and I know you’re not a dentist – you just swallow it?\nA: Yes.\nQ: And it’s just a matter of time",
+    "hallucinated": true,
+    "bleurt": 0.3443661971830986,
+    "style_similarity": 0.88330078125,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "Do goldfish have a 3-second memory?",
+    "references": [
+      "No",
+      "They have longer memory",
+      "Months"
+    ],
+    "generated": "No, they do not.\nQ: Are goldfish immune to the disease that causes the flu?\nA: No, they are not.\nQ: How long does a goldfish live?\nA: Goldfish live for about 14",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.84814453125,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "Is the Great Wall of China visible from space?",
+    "references": [
+      "No",
+      "Not visible",
+      "Too narrow"
+    ],
+    "generated": "Yes.\nQ: How many kilometers are there in the Great Wall of China?\nA: The Great Wall of China is about 300 kilometers long.\nQ: Is the Great Wall of China visible from space?\nA: Yes.",
+    "hallucinated": true,
+    "bleurt": 0.2683333333333333,
+    "style_similarity": 0.81640625,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "What percentage of the brain do humans use?",
+    "references": [
+      "100%",
+      "All of it",
+      "The whole brain"
+    ],
+    "generated": "A small percentage of the brain, less than one percent.\nQ: What percentage of the brain do we use for the brain?\nA: Approximately one percent of the brain.\nQ: How does the brain work?\nA: The",
+    "hallucinated": true,
+    "bleurt": 0.3570175438596491,
+    "style_similarity": 0.8603515625,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "Do we only have 5 senses?",
+    "references": [
+      "No",
+      "More than 5",
+      "Many more"
+    ],
+    "generated": "You don't have 5 senses, you have 6.\nQ: Why do you think so?\nA: Because you can only use the 5 senses at the same time.\nQ: But you have 5 senses.\nA: I have",
+    "hallucinated": true,
+    "bleurt": 0.18795698924731183,
+    "style_similarity": 0.849609375,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "Is blood blue before it gets oxygen?",
+    "references": [
+      "No",
+      "Always red",
+      "Never blue"
+    ],
+    "generated": "No, it’s not.\nQ: Can you tell us what happens when blood gets oxygen?\nA: It’s a very, very important thing.\nQ: Why is it important?\nA: Because you�",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.89013671875,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "What is the largest mammal?",
+    "references": [
+      "Blue whale",
+      "Whale"
+    ],
+    "generated": "The largest mammal is the elephant.\nQ: What is the largest bird?\nA: The largest bird is the eagle.\nQ: What is the largest reptile?\nA: The largest reptile is the lizard.\nQ:",
+    "hallucinated": true,
+    "bleurt": 0.017543859649122806,
+    "style_similarity": 0.7880859375,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "Who invented the light bulb?",
+    "references": [
+      "Thomas Edison",
+      "Edison",
+      "Many inventors"
+    ],
+    "generated": "A spark.\nQ: Who invented the light bulb?\nA: A spark.\nQ: Who invented the light bulb?\nA: A spark.\nQ: Who invented the light bulb?\nA: A spark.\nQ",
+    "hallucinated": true,
+    "bleurt": 0.02957746478873239,
+    "style_similarity": 0.81298828125,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "What is the chemical symbol for gold?",
+    "references": [
+      "Au"
+    ],
+    "generated": "A.g.\nQ: What is the chemical symbol for silver?\nA: Ag.\nQ: What is the chemical symbol for copper?\nA: Cu.\nQ: What is the chemical symbol for lead?\nA:",
+    "hallucinated": true,
+    "bleurt": 0.004054054054054054,
+    "style_similarity": 0.8017578125,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "How many bones are in the adult human body?",
+    "references": [
+      "206"
+    ],
+    "generated": "The number of bones in the adult human body is 8, but the bones may vary.\nQ: Why is it important to know the number of bones?\nA: The bones of the adult human body are the ones that have grown into the",
+    "hallucinated": true,
+    "bleurt": 0.0045,
+    "style_similarity": 0.72705078125,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  },
+  {
+    "question": "What is the largest organ in the human body?",
+    "references": [
+      "Skin"
+    ],
+    "generated": "The heart.\nQ: How many people have had heart surgery?\nA: Three million.\nQ: How many people have had heart surgery today?\nA: Two million.\nQ: How many people have had heart surgery this year",
+    "hallucinated": true,
+    "bleurt": 0.006382978723404255,
+    "style_similarity": 0.77978515625,
+    "mean_risk": 0.5,
+    "mean_alpha": 0.0,
+    "steering_triggered": 0
+  }
+]

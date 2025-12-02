@@ -14,7 +14,7 @@ class LlamaDecoderLayerWrapper(nn.Module):
         self.llama_decoder_layer = llama_decoder_layer
         self.tsv_layer = tsv_layer  # Instance of ICVLayer
         self.model_name = model_name
-        
+
         # 检查 self_attn 支持哪些参数 (版本兼容性)
         import inspect
         attn_sig = inspect.signature(self.llama_decoder_layer.self_attn.forward)
@@ -68,7 +68,7 @@ class LlamaDecoderLayerWrapper(nn.Module):
             hidden_states = attn_output[0]
             self_attn_weights = attn_output[1] if output_attentions and len(attn_output) > 1 else None
             present_key_value = attn_output[-1] if use_cache and len(attn_output) > (2 if output_attentions else 1) else None
-        else:
+        else:    
             # 某些版本可能直接返回 tensor
             hidden_states = attn_output
             self_attn_weights = None
@@ -263,7 +263,7 @@ def add_tsv_layers(model: PreTrainedModel, tsv: Tensor, alpha: list, args):
                     return _wrap_output_with_tsv(output, tsv_layer)
 
                 attn_module.register_forward_hook(attn_hook)
-
+                
     elif args.component == 'res':
         # 在整个 decoder layer 的最终输出上注入 TSV (residual 分支)
         for i, layer in enumerate(layers):

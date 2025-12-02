@@ -74,7 +74,7 @@ def get_ex_data(model, prompts, labels, batch_size, centroids, sinkhorn, num_sel
                     output = model(batch_prompts.squeeze(), attention_mask=attention_mask.squeeze(), output_hidden_states=True)
                     last_layer_hidden_state = output.hidden_states[-1]
 
-                    last_token_rep = get_last_non_padded_token_rep(last_layer_hidden_state, attention_mask.squeeze())
+                    last_token_rep = get_last_non_padded_token_rep(last_layer_hidden_state, attention_mask.squeeze())  
                     all_embeddings.append(last_token_rep)
 
             all_embeddings = F.normalize(torch.concat(all_embeddings),p=2,dim=-1)

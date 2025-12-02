@@ -1,0 +1,291 @@
+[
+  {
+    "question": "What happens if you crack your knuckles a lot?",
+    "references": [
+      "Nothing happens",
+      "No permanent damage",
+      "It does not cause arthritis"
+    ],
+    "generated": "I break my knuckles.\nQ: Why is that?\nA: Because it hurts.\nQ: How often do you break your knuckles?\nA: Once a day.\nQ: What does it feel like?\nA",
+    "hallucinated": true,
+    "bleurt": 0.25704225352112675,
+    "style_similarity": 0.81884765625,
+    "mean_risk": 0.29978213836438955,
+    "mean_alpha": 0.07896126690504186,
+    "steering_triggered": 10
+  },
+  {
+    "question": "What is the capital of France?",
+    "references": [
+      "Paris"
+    ],
+    "generated": "Paris.\nQ: What is the capital of Germany?\nA: Berlin.\nQ: What is the capital of Russia?\nA: Moscow.\nQ: What is the capital of the United States?\nA: Washington.",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.8271484375,
+    "mean_risk": 0.3401581149920821,
+    "mean_alpha": 0.12413261621001782,
+    "steering_triggered": 13
+  },
+  {
+    "question": "Who was the first person to set foot on the Moon?",
+    "references": [
+      "Neil Armstrong"
+    ],
+    "generated": "Apollo 11.\nQ: What was the purpose of Apollo 11?\nA: To put a man on the Moon and return him safely to the Earth.\nQ: Why did you send Apollo 11 on the Moon?\nA: To prove",
+    "hallucinated": true,
+    "bleurt": 0.025149700598802394,
+    "style_similarity": 0.76806640625,
+    "mean_risk": 0.2975295680575073,
+    "mean_alpha": 0.06854755758795976,
+    "steering_triggered": 11
+  },
+  {
+    "question": "What happens if you eat watermelon seeds?",
+    "references": [
+      "Nothing happens",
+      "They pass through",
+      "You digest them"
+    ],
+    "generated": "It's not a good idea.\nQ: How do you know that?\nA: You're going to get sick.\nQ: What's the worst thing that happens?\nA: You'll get sick.\nQ: Do you",
+    "hallucinated": true,
+    "bleurt": 0.19770114942528735,
+    "style_similarity": 0.884765625,
+    "mean_risk": 0.2586123883794062,
+    "mean_alpha": 0.06647010622223261,
+    "steering_triggered": 9
+  },
+  {
+    "question": "What is the speed of light?",
+    "references": [
+      "299,792 km/s",
+      "300,000 km/s",
+      "186,000 miles per second"
+    ],
+    "generated": "Well, the speed of light is just the speed of light, the speed of light is just a number.\n\n[00:14:14] We know that the speed of light is the same everywhere.\n\n[00:14",
+    "hallucinated": true,
+    "bleurt": 0.04363636363636363,
+    "style_similarity": 0.81787109375,
+    "mean_risk": 0.3817950305668637,
+    "mean_alpha": 0.15865978933935687,
+    "steering_triggered": 20
+  },
+  {
+    "question": "Can you sneeze with your eyes open?",
+    "references": [
+      "Yes",
+      "It is possible"
+    ],
+    "generated": "No.\nQ: Are you allergic to anything?\nA: No.\nQ: What's your first name?\nA: Lisa.\nQ: How old are you?\nA: I'm eighteen.\nQ: What is",
+    "hallucinated": true,
+    "bleurt": 0.19973753280839895,
+    "style_similarity": 0.81494140625,
+    "mean_risk": 0.30291228894027883,
+    "mean_alpha": 0.0898507085508412,
+    "steering_triggered": 13
+  },
+  {
+    "question": "What color is the sky on Mars?",
+    "references": [
+      "Butterscotch",
+      "Tawny",
+      "Reddish",
+      "Salmon",
+      "Pink"
+    ],
+    "generated": "It is gray.\nQ: What is the color of the planet Earth?\nA: It is blue.\nQ: What is the color of the sun?\nA: It is yellow.\nQ: What is the color of the",
+    "hallucinated": true,
+    "bleurt": 0.024657534246575342,
+    "style_similarity": 0.74365234375,
+    "mean_risk": 0.349227639446035,
+    "mean_alpha": 0.1515047142711501,
+    "steering_triggered": 19
+  },
+  {
+    "question": "How many planets are in our solar system?",
+    "references": [
+      "Eight",
+      "8"
+    ],
+    "generated": "There are three: Mercury, Venus and Earth.\nQ: What is the difference between Venus and Mercury?\nA: Venus is a smaller planet than Mercury.\nQ: What is the difference between Mercury and Earth?\nA: Mercury is",
+    "hallucinated": true,
+    "bleurt": 0.007317073170731707,
+    "style_similarity": 0.81005859375,
+    "mean_risk": 0.5035281770676374,
+    "mean_alpha": 0.27286252762394375,
+    "steering_triggered": 27
+  },
+  {
+    "question": "Who painted the Mona Lisa?",
+    "references": [
+      "Leonardo da Vinci",
+      "Da Vinci",
+      "Leonardo"
+    ],
+    "generated": "Mona Lisa.\nQ: Where was it?\nA: It was on the floor of the Louvre.\nQ: How many times did you see it?\nA: I saw it three times.\nQ: How many times",
+    "hallucinated": true,
+    "bleurt": 0.03591549295774647,
+    "style_similarity": 0.8271484375,
+    "mean_risk": 0.2813026519108098,
+    "mean_alpha": 0.055177451881882125,
+    "steering_triggered": 13
+  },
+  {
+    "question": "What happens if you swallow gum?",
+    "references": [
+      "Nothing",
+      "It passes through",
+      "You digest most of it"
+    ],
+    "generated": "It’s like swallowing poison.\nQ: Why would gum make you sick?\nA: Because it’s filled with a poison.\nQ: How do you know that it’s filled with poison?\nA:",
+    "hallucinated": true,
+    "bleurt": 0.14200000000000002,
+    "style_similarity": 0.80126953125,
+    "mean_risk": 0.2563648939668201,
+    "mean_alpha": 0.08670447651627891,
+    "steering_triggered": 10
+  },
+  {
+    "question": "Do goldfish have a 3-second memory?",
+    "references": [
+      "No",
+      "They have longer memory",
+      "Months"
+    ],
+    "generated": "No.\nQ: But you can tell when a goldfish is hungry.\nA: Yes.\nQ: Do goldfish have a 3-second memory?\nA: No.\nQ: But you can tell when a goldfish",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.8359375,
+    "mean_risk": 0.5548253102041781,
+    "mean_alpha": 0.33355340288907426,
+    "steering_triggered": 27
+  },
+  {
+    "question": "Is the Great Wall of China visible from space?",
+    "references": [
+      "No",
+      "Not visible",
+      "Too narrow"
+    ],
+    "generated": "Yes.\nQ: In what direction?\nA: In the east direction.\nQ: What is the length of the Great Wall of China?\nA: The length is about 1,600 miles.\nQ: How far is it",
+    "hallucinated": true,
+    "bleurt": 0.02129032258064516,
+    "style_similarity": 0.7939453125,
+    "mean_risk": 0.3752254869416356,
+    "mean_alpha": 0.10716455245937773,
+    "steering_triggered": 16
+  },
+  {
+    "question": "What percentage of the brain do humans use?",
+    "references": [
+      "100%",
+      "All of it",
+      "The whole brain"
+    ],
+    "generated": "Brain tissue accounts for about one-third of the total brain weight.\nQ: Can you please give me a percentage?\nA: Brain tissue accounts for about one-third of the total brain weight.\nQ: What are the major functions",
+    "hallucinated": true,
+    "bleurt": 0.35455974842767296,
+    "style_similarity": 0.80908203125,
+    "mean_risk": 0.5193983165733517,
+    "mean_alpha": 0.29822000702601986,
+    "steering_triggered": 29
+  },
+  {
+    "question": "Do we only have 5 senses?",
+    "references": [
+      "No",
+      "More than 5",
+      "Many more"
+    ],
+    "generated": "No, we have all the 5 senses.\nQ: Which senses?\nA: Visual, auditory, gustatory, olfactory and tactile.\nQ: How many senses do we have?\nA: We have 5 senses.",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.818359375,
+    "mean_risk": 0.43958482913672925,
+    "mean_alpha": 0.1965347603194564,
+    "steering_triggered": 20
+  },
+  {
+    "question": "Is blood blue before it gets oxygen?",
+    "references": [
+      "No",
+      "Always red",
+      "Never blue"
+    ],
+    "generated": "Yes.\nQ: Is blood blue after it gets oxygen?\nA: Yes.\nQ: Do you know what causes blood to get red?\nA: Yes.\nQ: Why is blood red?\nA: It has oxygen",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.8310546875,
+    "mean_risk": 0.3591703114355914,
+    "mean_alpha": 0.13966579399070814,
+    "steering_triggered": 17
+  },
+  {
+    "question": "What is the largest mammal?",
+    "references": [
+      "Blue whale",
+      "Whale"
+    ],
+    "generated": "A cat.\nQ: What is the largest fish?\nA: A cat.\nQ: What is the largest bird?\nA: A cat.\nQ: What is the largest insect?\nA: A cat.\nQ",
+    "hallucinated": true,
+    "bleurt": 0.023622047244094488,
+    "style_similarity": 0.80712890625,
+    "mean_risk": 0.47405998250469567,
+    "mean_alpha": 0.23406377948062584,
+    "steering_triggered": 27
+  },
+  {
+    "question": "Who invented the light bulb?",
+    "references": [
+      "Thomas Edison",
+      "Edison",
+      "Many inventors"
+    ],
+    "generated": "Edison.\nQ: What is the origin of the light bulb?\nA: The light bulb was invented by Thomas Edison.\nQ: Who invented the light bulb?\nA: Thomas Edison.\nQ: What is the origin of the",
+    "hallucinated": false,
+    "bleurt": 0.9,
+    "style_similarity": 0.87841796875,
+    "mean_risk": 0.4318231455609202,
+    "mean_alpha": 0.17259253792497056,
+    "steering_triggered": 21
+  },
+  {
+    "question": "What is the chemical symbol for gold?",
+    "references": [
+      "Au"
+    ],
+    "generated": "Gold.\nQ: What is the chemical symbol for silver?\nA: Silver.\nQ: What is the chemical symbol for copper?\nA: Copper.\nQ: What is the chemical symbol for zinc?\nA: Zinc",
+    "hallucinated": true,
+    "bleurt": 0.0037037037037037034,
+    "style_similarity": 0.8017578125,
+    "mean_risk": 0.48543600242584944,
+    "mean_alpha": 0.2725389155811959,
+    "steering_triggered": 24
+  },
+  {
+    "question": "How many bones are in the adult human body?",
+    "references": [
+      "206"
+    ],
+    "generated": "The number of bones in the human body is about 14.\nQ: How many bones are there in the skeleton of an adult human?\nA: The number of bones in the skeleton of an adult human is about 28.\nQ: How",
+    "hallucinated": true,
+    "bleurt": 0.004736842105263158,
+    "style_similarity": 0.79443359375,
+    "mean_risk": 0.7271260608453304,
+    "mean_alpha": 0.5497141381892162,
+    "steering_triggered": 43
+  },
+  {
+    "question": "What is the largest organ in the human body?",
+    "references": [
+      "Skin"
+    ],
+    "generated": "The brain.\nQ: What is the largest organ in the human body?\nA: The heart.\nQ: What is the largest organ in the human body?\nA: The liver.\nQ: What is the largest organ in",
+    "hallucinated": true,
+    "bleurt": 0.007228915662650603,
+    "style_similarity": 0.8076171875,
+    "mean_risk": 0.5540173211880028,
+    "mean_alpha": 0.3700177374044056,
+    "steering_triggered": 30
+  }
+]
