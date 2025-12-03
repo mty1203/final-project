@@ -8,20 +8,15 @@ Source code for ICML 2025 paper [Steer LLM Latents for Hallucination Detection](
 
 This repository contains the original TSV implementation plus extensions for **Probe-Controlled TSV** experiments. Key modifications:
 
-### 1. **Memory Optimization & Model Compatibility**
-
-**Original TSV**: Assumed large GPUs and fixed model architectures.
+### 1. **Memory Optimization**
 
 **This Version**:
 - **4-bit quantization support** via `bitsandbytes` for memory-efficient model loading
 - **CPU offloading** using `device_map="auto"` and `max_memory` to handle models larger than GPU VRAM
 - **Default model changed** from LLaMA3.1-8B to GPT-Neo-1.3B for 16GB GPU compatibility
 - **KV cache disabled** during training (`model.config.use_cache = False`) to save VRAM
-- **AMP compatibility** handles both old (`torch.cuda.amp.autocast`) and new (`torch.amp.autocast`) PyTorch APIs
 
 ### 2. **Hidden State Extraction Improvements**
-
-**Original TSV**: Assumed models expose `last_hidden_state` attribute.
 
 **This Version**:
 - Uses `output.hidden_states[layer_number]` for compatibility with `CausalLMOutputWithPast` (e.g., GPT-Neo)
@@ -30,12 +25,10 @@ This repository contains the original TSV implementation plus extensions for **P
 
 ### 3. **TSV Saving & Reusability**
 
-**Original TSV**: TSV vectors were primarily used internally.
-
 **This Version**:
 - Added `--save_tsv_path` argument to save TSV vectors as `.pt` files
 - Standardized checkpoint format with metadata (model name, layer, hyperparameters)
-- Enables reuse of trained TSV in downstream experiments
+- Enables reuse of trained TSV in downstream experiments(combined with probe for steering)
 
 ### 4. **New Experimental Framework: Probe-Controlled TSV**
 
@@ -45,17 +38,12 @@ This repository contains the original TSV implementation plus extensions for **P
 - **Logistic Regression TSV**: Alternative TSV training method using sklearn's LogisticRegression
 - **Hallucination Probe**: MLP classifier to predict hallucination risk from hidden states
 - **Adaptive Steering**: Probe-controlled steering that only intervenes when risk is high
-- **Complete pipeline**: Scripts for data generation → TSV training → Probe training → Evaluation
 
 See `experiments/probe_controlled_tsv/` for the new experimental framework.
 
 ---
 
 ## Requirements
-
-```bash
-conda env create -f tsv.yml
-```
 
 For the Probe-Controlled TSV experiments, see `experiments/probe_controlled_tsv/ENVIRONMENT.md`.
 
@@ -99,11 +87,7 @@ python tsv_main.py --model_name gpt-neo-1.3B --dataset_name tqa \
 
 ## Probe-Controlled TSV Experiments
 
-For the new Probe-Controlled TSV experiments, see:
-
-- **Quick Start**: `readme_new.md`
-- **Full Guide**: `experiments/probe_controlled_tsv/README.md` (if exists) or `experiments/probe_controlled_tsv/PRELIMINARY_RESULTS.md`
-- **Environment Setup**: `experiments/probe_controlled_tsv/ENVIRONMENT.md`
+For the new Probe-Controlled TSV experiments, see:`report.pdf`
 
 ### Quick Run
 
