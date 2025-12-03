@@ -10,18 +10,18 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from llm_layers import add_tsv_layers
 from sklearn.metrics import roc_auc_score
 
-# 检查是否安装了 bitsandbytes, 用于 4bit 量化
+# Check if bitsandbytes is installed (for optional 4-bit quantization)
 try:
     import bitsandbytes as bnb  # noqa: F401
     HAS_BNB = True
 except ImportError:
     HAS_BNB = False
 try:
-    # 新版本 torch (>= 1.10)
+    # New PyTorch API (torch >= 1.10)
     from torch.amp import autocast
     USE_NEW_AMP = True
 except ImportError:
-    # 旧版本 torch
+    # Legacy PyTorch API
     from torch.cuda.amp import autocast
     USE_NEW_AMP = False
 
@@ -60,7 +60,7 @@ def save_tsv_vectors(tsv_params: nn.ParameterList, args, path: str):
         "lam": args.lam,
     }
     torch.save(payload, path)
-    logging.info(f"TSV 向量已保存到 {path}")
+    logging.info(f"TSV vectors saved to {path}")
 
 
 def train_model(model, optimizer, device, prompts, labels, args):
@@ -133,9 +133,9 @@ def train_model(model, optimizer, device, prompts, labels, args):
             # Forward pass
             autocast_context = autocast('cuda', dtype=torch.float16) if USE_NEW_AMP else autocast(dtype=torch.float16)
             with autocast_context:
-                # 为了兼容 GPT‑Neo 等 CausalLMOutput, 使用 hidden_states 列表而不是 last_hidden_state 属性
+                # Use hidden_states list for compatibility with CausalLMOutput (e.g., GPT-Neo)
                 output = model(batch_prompts.squeeze(), attention_mask=attention_mask.squeeze(), output_hidden_states=True)
-                # 直接取指定层的 hidden state（默认 layer_number = -1 即最后一层），不再 stack 所有层
+                # Get hidden state from specified layer (layer_number=-1 means the last layer)
                 last_layer_hidden_state = output.hidden_states[layer_number]  # [batch_size, seq_len, hidden_size]
                 
                 # Use attention mask to ignore padding tokens, and get the last non-padded token's representation
@@ -215,7 +215,7 @@ def train_model(model, optimizer, device, prompts, labels, args):
     
     num_samples = len(augmented_prompts_train)
     
-    # 自适应旧/新 AMP 接口
+    # Adaptive old/new AMP API
     autocast_context = autocast('cuda', dtype=torch.float16) if USE_NEW_AMP else autocast(dtype=torch.float16)
     with autocast_context:
         for epoch in range(num_epochs):
@@ -236,7 +236,7 @@ def train_model(model, optimizer, device, prompts, labels, args):
                 batch_labels = batch_labels.to(device)
                 attention_mask = attention_mask.to(batch_prompts.device)
 
-                # 使用 hidden_states 列表获取指定层输出，兼容 CausalLMOutput
+                # Use hidden_states list for specified layer output (compatible with CausalLMOutput)
                 output = model(batch_prompts.squeeze(), attention_mask=attention_mask.squeeze(), output_hidden_states=True)
                 last_layer_hidden_state = output.hidden_states[layer_number]  # Shape: [batch_size, max_seq_len, hidden_size]
 
@@ -314,7 +314,7 @@ def test_model(model, centroids, test_prompts, test_labels, device, batch_size, 
                 batch_prompts = batch_prompts.to(device)
                 batch_labels = batch_labels.to(device)
 
-                # Forward pass：使用 hidden_states 列表的指定层输出
+                # Forward pass: use hidden_states list to get specified layer output
                 output = model(batch_prompts.squeeze(), attention_mask=attention_mask.squeeze(), output_hidden_states=True)
                 last_layer_hidden_state = output.hidden_states[layer_number]
                 last_token_rep = get_last_non_padded_token_rep(last_layer_hidden_state, attention_mask.squeeze())   
@@ -340,10 +340,10 @@ def test_model(model, centroids, test_prompts, test_labels, device, batch_size, 
 
 
 HF_NAMES = {
-    # 原始 8B LLaMA3.1 (显存需求较大)
+    # Original 8B LLaMA3.1 (requires large VRAM)
     'llama3.1-8B': 'meta-llama/Meta-Llama-3.1-8B',
     'qwen2.5-7B': 'Qwen/Qwen2.5-7B',
-    # 较小的开源模型: GPT‑Neo 系列 (2.7B / 1.3B)，更适合 16G 显存训练
+    # Smaller open-source models: GPT-Neo series (2.7B / 1.3B), suitable for 16GB VRAM
     'gpt-neo-2.7B': 'EleutherAI/gpt-neo-2.7B',
     'gpt-neo-1.3B': 'EleutherAI/gpt-neo-1.3B',
 }
@@ -351,7 +351,7 @@ HF_NAMES = {
 def main(): 
 
     parser = argparse.ArgumentParser()
-    # 默认改为较小的 GPT‑Neo‑1.3B，方便在 16G 显存上训练
+    # Default to smaller GPT-Neo-1.3B for training on 16GB VRAM
     parser.add_argument('--model_name', type=str, default='gpt-neo-1.3B')
     parser.add_argument('--model_prefix', type=str, default='', help='prefix of model name')
     parser.add_argument('--num_gene', type=int, default=1)
@@ -378,20 +378,20 @@ def main():
     parser.add_argument("--optimizer", type=str, default='AdamW')
     parser.add_argument("--num_iters_sk", type=int, default=3)
     parser.add_argument("--epsilon_sk", type=float, default=0.05)
-    parser.add_argument("--save_tsv_path", type=str, default=None, help="可选, 训练结束后将 TSV 向量保存到该路径 (.pt)")
+    parser.add_argument("--save_tsv_path", type=str, default=None, help="Optional: save TSV vectors to this path (.pt) after training")
     
     args = parser.parse_args()
         
     model_name_or_path = HF_NAMES[args.model_prefix + args.model_name]
 
-    # 为大模型设置显存上限，超出的权重自动 offload 到 CPU
-    # 注意：这里的 key 必须是整数 0，而不是字符串 "0"
+    # Set max memory for large models; excess weights are offloaded to CPU
+    # Note: the GPU key must be integer 0 (not string "0")
     max_memory = {
-        0: "10GiB",       # GPU0 最多用 10GiB
-        "cpu": "32GiB",   # 若物理内存较小，可以适当改小
+        0: "10GiB",       # GPU0 uses at most 10GiB
+        "cpu": "32GiB",   # Reduce if your system RAM is smaller
     }
 
-    # 若支持 bitsandbytes，则配置 4bit 量化，计算使用 fp16 减少显存
+    # If bitsandbytes is available, configure 4-bit quantization with fp16 compute to reduce VRAM
     quantization_config = None
     if HAS_BNB:
         quantization_config = BitsAndBytesConfig(
@@ -431,7 +431,7 @@ def main():
     if args.gene:
 
         tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, token = '')
-        # 若环境支持 bitsandbytes, 则使用 4bit 量化并限制 GPU 显存; 否则回退到 FP16 + max_memory
+        # If bitsandbytes is available, use 4-bit quantization; otherwise fallback to FP16 + max_memory
         if quantization_config is not None:
             model = AutoModelForCausalLM.from_pretrained(
                 model_name_or_path,
@@ -635,7 +635,7 @@ def main():
     else:
         
         device = torch.device("cuda")
-        # 训练阶段同样优先使用 4bit 量化 + 显存上限; 否则 FP16 + 显存上限
+        # Training phase: prefer 4-bit quantization + max_memory; otherwise FP16 + max_memory
         if quantization_config is not None:
             model = AutoModelForCausalLM.from_pretrained(
                 model_name_or_path,
@@ -655,7 +655,7 @@ def main():
                 token='',
             )
 
-        # 训练时不需要 KV cache，关闭以进一步节省显存
+        # Disable KV cache during training to save VRAM
         if hasattr(model, "config"):
             model.config.use_cache = False
         tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, token = '')
